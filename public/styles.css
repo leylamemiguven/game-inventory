@@ -1,0 +1,67 @@
+body{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    background: rgb(27, 27, 27);
+    color: white;
+    margin: 2em;
+
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #454545;
+    padding: 0.7em;
+    border: 1px solid #ddd;
+    margin: 0.5em;
+    border-radius: 15px;;
+  }
+  
+  .game img {
+    width: 100px;
+    height: auto;
+
+  }
+  
+
+
+.game-prop, .prop{
+    width: 200px;
+    text-align: center;
+}
+
+  li{
+    list-style-type: none
+  }
+
+  button{
+    font-family: "Pixelify Sans", sans-serif;
+    padding: 0.5em 1em; 
+    background: springgreen;
+    border: none;
+    border-radius: 8px;
+
+  }
+
+  button :hover{
+    border: 5px solid rgb(17, 129, 73);
+    cursor: pointer;
+
+  }
+
+  .props{
+    display:flex;
+    justify-content: space-between;
+    padding: 0 2em;
+    
+  }
+
+
+
+  ul{
+    padding-left: 0;
+
+  }

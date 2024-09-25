@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Game</title>
+</head>
+<body>
+    <h1>Add a New Game</h1>
+    <form action="/games" method="POST">
+        <label for="name">Game Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="poster_image">Poster Image URL:</label>
+        <input type="text" id="poster_image" name="poster_image" required>
+
+        <label for="developer">Developer:</label>
+        <input type="text" id="developer" name="developer" required>
+
+        <label for="platforms">Platforms:</label>
+        <input type="text" id="platforms" name="platforms" required>
+
+        <!-- <label for="CategoryId">Category ID:</label>
+        <input type="number" id="CategoryId" name="CategoryId" required> -->
+
+        <button type="submit">Add Game</button>
+    </form>
+</body>
+</html>
