@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
-const Category = require('./category');
+
 
 const Game = sequelize.define('Game', {
     name: {
@@ -18,8 +18,12 @@ const Game = sequelize.define('Game', {
     platforms: {
         type: DataTypes.STRING, // You can use JSON if you prefer
     },
+    genre: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 });
 
-Game.belongsTo(Category);
+// Game.belongsTo(Category);
 
 module.exports = Game;

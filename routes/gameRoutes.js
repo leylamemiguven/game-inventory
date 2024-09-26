@@ -16,26 +16,26 @@ router.get('/:id', async (req, res) => {
 
 // Create a new game
 router.post('/', async (req, res) => {
-  const { name, poster_image, developer, platforms, CategoryId } = req.body;
+  const { name, poster_image, developer, platforms, genre } = req.body;
   const newGame = await Game.create({
     name,
     poster_image,
     developer,
     platforms,
-    CategoryId,
+    genre,
   });
   res.json(newGame);
 });
 
 // Update a game
 router.put('/:id', async (req, res) => {
-  const { name, poster_image, developer, platforms, CategoryId } = req.body;
+  const { name, poster_image, developer, platforms, genre } = req.body;
   const game = await Game.findByPk(req.params.id);
   game.name = name;
   game.poster_image = poster_image;
   game.developer = developer;
   game.platforms = platforms;
-  game.CategoryId = CategoryId;
+  game.genre = genre;
   await game.save();
   res.json(game);
 });

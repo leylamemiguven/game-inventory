@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const sequelize = require('./database');
-const categoryRoutes = require('./routes/categoryRoutes');
 const gameRoutes = require('./routes/gameRoutes');
 const Game = require('./models/game'); // Import Game model
 
@@ -15,13 +14,19 @@ app.use(methodOverride('_method'));  // Allow DELETE/PUT requests in forms
 app.use(express.static('public'));   // Serve static files (HTML forms)
 
 // Use the routes
-app.use('/categories', categoryRoutes);
+// app.use('/categories', categoryRoutes);
 app.use('/games', gameRoutes);
 
 // Sync database models
 sequelize.sync().then(() => {
   console.log('Database & tables created!');
 });
+
+//for testing 
+// sequelize.sync({ force: true }).then(() => {
+//   console.log('Database & tables created!');
+// });   
+
 
 // Home page route - Display games and option to delete/add
 app.get('/', async (req, res) => {
@@ -50,13 +55,12 @@ app.get('/', async (req, res) => {
       html += `<li>
                     <div class="game">
                         <div class="game-prop"> <img src="${game.poster_image}"/> </div>
-                        <div class="game-prop">${game.name} </div>
-                        <div class="game-prop"> Cateogry: </div>
+                        <div class="game-prop"> <a href="/games/${game.id}">${game.name}</a></div>
+                        <div class="game-prop"> ${game.genre}</div>
                         <div class="game-prop"> ${game.developer} </div>
                         <div class="game-prop"> ${game.platforms} </div>
-                        <div class="game-prop"><form action="/games/${game.id}?_method=DELETE" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                        </form></div>
+                        <div class="game-prop"><a></a><form action="/games/${game.id}?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button></form></a></div>
             
                     </div>
 
@@ -64,7 +68,7 @@ app.get('/', async (req, res) => {
     });
 
     html += `</ul>
-      <a href="/gameForm.html">Add a new game</a>
+      <a href="/addGameForm.html">Add a new game</a>
     `;
 
     res.send(html);
@@ -72,6 +76,7 @@ app.get('/', async (req, res) => {
     res.status(500).send('An error occurred');
   }
 });
+
 
 // Start the server
 app.listen(PORT, () => {
