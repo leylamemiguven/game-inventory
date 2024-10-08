@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Game Inventory</title>
+
+</head>
+<body>
+    <h1>Game Inventory</h1>
+    <div class=props>
+        <p class="prop"> </p>
+        <p class="prop">Name</p>
+        <p class="prop">Genre</p>
+        <p class="prop">Developer</p>
+        <p class="prop">Platforms</p>
+        <p class="prop">Actions</p>
+      
+
+      </div>
+    <ul>
+        <% games.forEach(game => { %>
+            <li>
+                <div class="game">
+                    <div class="game-prop"> <img src="<%= game.poster_image %>"/> </div>
+                    <div class="game-prop"> <a href="/games/<%= game.id %>"><%= game.name %></a></div>
+                    <div class="game-prop"> <%= game.genre %> </div>
+                    <div class="game-prop"> <%= game.developer %> </div>
+                    <div class="game-prop"> <%= game.platforms %> </div>
+                    <div class="game-prop">
+                        <div>
+                            <form action="/games/<%= game.id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit">Delete <span class="material-symbols-outlined">delete </span></button>
+                            </form>
+                        </div>
+                        <div>
+                            <a href="/games/<%= game.id %>/edit">
+                                <button>Edit <span class="material-symbols-outlined">edit</span> </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/public/add-game.ejs">Add a new game</a>
+</body>
+</html>

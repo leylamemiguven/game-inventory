@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+
+body{
+    background: #E6EEFF;
+    font-family: "Moderustic", sans-serif;
+    font-optical-sizing: auto;
+    padding: 1em;
+    margin: auto;
+
+}
+
+input{
+    border: none;
+    border-radius: 15px; 
+    padding: 0.5em;
+    outline: none; 
+    margin-bottom: 1em;
+    
+
+}
+/* input:focus {
+    border-color: #522FE0; 
+} */
+
+button{
+    font-family: "Moderustic", sans-serif;
+    font-optical-sizing: auto;
+    border-radius: 15px;
+    padding: 0.5em;
+    background:#522FE0;
+    color: white;
+    border: none;
+    margin: 1em;
+
+
+
+}
+button:hover{
+    background: #7FA1FF;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+label{
+    padding: 0.8em 0 0.4em 0;
+}
+
+h3{
+    margin: 0;
+}
+.create-user-form, .update-user-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.search-user-form{
+    border: 3px solid #522FE0;
+    padding: 0.5em;
+    border-radius: 15px;
+
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* font-weight: <weight>;
+font-style: normal; */

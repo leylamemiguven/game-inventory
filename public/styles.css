@@ -44,12 +44,16 @@ body{
     border: none;
     border-radius: 8px;
     margin: 1em 0;
+    display: flex;
+    align-items: center;
+    width: 10em;
+    cursor: pointer;
+    justify-content: space-between;
 
   }
 
   button :hover{
-    border: 5px solid rgb(17, 129, 73);
-    cursor: pointer;
+    background-color: rgb(17, 129, 73);
 
   }
 
@@ -79,4 +83,9 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0.5em 0;
+  }
+
+  .material-symbols-outlined{
+    margin-left: 0.3em;
+
   }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Add Game</title>
+</head>
+<body>
+    <h1>Add a New Game</h1>
+    <form class="add-game-form" action="/games" method="POST">
+        <label for="name">Game Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="poster_image">Poster Image URL:</label>
+        <input type="text" id="poster_image" name="poster_image" required>
+
+        <label for="developer">Developer:</label>
+        <input type="text" id="developer" name="developer" required>
+
+        <label for="platforms">Platforms:</label>
+        <input type="text" id="platforms" name="platforms" required>
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre" required>
+
+        <button type="submit">Add Game</button>
+    </form>
+    <a href="/">Go back</a>
+</body>
+</html>
