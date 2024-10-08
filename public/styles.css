@@ -26,6 +26,10 @@ body{
 
   }
   
+  .game-img{
+    width: 200px;
+    height: auto;
+  }
 
 
 .game-prop, .prop{

@@ -13,6 +13,12 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Serve the "Add Game" form
+router.get('/new', (req, res) => {
+  res.render('add-game');  // Renders the 'add-game.ejs' template
+});
+
+
 // Get a single game by id and render a game view (optional)
 router.get('/:id', async (req, res) => {
   try {
@@ -26,11 +32,6 @@ router.get('/:id', async (req, res) => {
     console.error('Error fetching game:', error);
     res.status(500).send('An error occurred while fetching the game.');
   }
-});
-
-// Serve the "Add Game" form
-router.get('/new', (req, res) => {
-  res.render('add-game');  // Renders the 'add-game.ejs' template
 });
 
 // Create a new game and redirect to the homepage
@@ -48,7 +49,7 @@ router.post('/', async (req, res) => {
     });
 
     // Redirect back to the homepage after the game is added
-    res.redirect('/games');
+    res.redirect('/');
   } catch (error) {
     console.error('Error creating game:', error);
     res.status(500).send('An error occurred while creating the game.');
