@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Edit Game</h1>
-    <form action="/games/<%= game.id %>?_method=PUT" method="POST">
+    <form class="add-game-form" action="/games/<%= game.id %>?_method=PUT" method="POST">
         <label for="name">Game Name:</label>
         <input type="text" id="name" name="name" value="<%= game.name %>" required>
 
