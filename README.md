@@ -29,12 +29,11 @@ A web application built with Node.js, Express, and PostgreSQL that allows users 
 
    ```bash
    git clone https://github.com/leylamemiguven/game-inventory.git
-2.  run
+2.  Run with the command to run on http://localhost:3000/
 
  ```bash
 node --watch index.js
 ```
-Application will be running on http://localhost:3000/ 
    
 
 3. Add a new Game
